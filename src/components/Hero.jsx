@@ -3,6 +3,13 @@ function Hero() {
     <section id="home" className="hero">
       <div className="hero-content">
 
+        {/* PROFILE PHOTO — YAHAN PASTE KARO */}
+        <img
+          src="WhatsApp Image 2026-07-02 at 8.54.26 PM.jpeg"
+          alt="Rohit Pawar"
+          className="profile-image"
+        />
+
         <p className="hero-small">HELLO, I'M</p>
 
         <h1>
@@ -21,48 +28,36 @@ function Hero() {
             View My Work →
           </a>
 
-          <div className="social-links">
-  <a
-    href="https://github.com/Rohitpawar12-coder"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    GitHub
-  </a>
-
-  <a
-    href="https://www.linkedin.com/"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    LinkedIn
-  </a>
-
-  <a href="mailto:rohitpawar5312@gmail.com">
-    Email
-  </a>
-</div>
-
-          <a href="/resume.pdf" className="btn-secondary">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-secondary"
+          >
             Download Resume
           </a>
         </div>
 
-        <div className="hero-stats">
-          <div>
-            <strong>AI</strong>
-            <span>Artificial Intelligence</span>
-          </div>
+        <div className="social-links">
+          <a
+            href="https://github.com/Rohitpawar12-coder"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
 
-          <div>
-            <strong>ML</strong>
-            <span>Machine Learning</span>
-          </div>
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
 
-          <div>
-            <strong>DS</strong>
-            <span>Data Science</span>
-          </div>
+          <a href="mailto:rohitpawar5312@gmail.com">
+            Email
+          </a>
         </div>
 
       </div>

@@ -1,12 +1,9 @@
-import { useState } from "react";
-
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
   const links = [
     ["Home", "home"],
     ["About", "about"],
     ["Skills", "skills"],
+    ["Experience", "experience"],
     ["Projects", "projects"],
     ["Education", "education"],
     ["Certifications", "certifications"],
@@ -16,27 +13,16 @@ function Navbar() {
   return (
     <nav className="navbar">
       <a href="#home" className="logo">
-        ROHIT<span>.</span>
+        Rohit<span>.</span>
       </a>
 
-      <div className={`nav-links ${menuOpen ? "active" : ""}`}>
+      <div className="nav-links">
         {links.map(([name, id]) => (
-          <a
-            key={id}
-            href={`#${id}`}
-            onClick={() => setMenuOpen(false)}
-          >
+          <a href={`#${id}`} key={id}>
             {name}
           </a>
         ))}
       </div>
-
-      <button
-        className="menu-button"
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        {menuOpen ? "✕" : "☰"}
-      </button>
     </nav>
   );
 }
