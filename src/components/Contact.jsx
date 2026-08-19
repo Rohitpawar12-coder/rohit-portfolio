@@ -1,4 +1,43 @@
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
+
 function Contact() {
+  const form = useRef();
+  const [status, setStatus] = useState("");
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    setStatus("Sending...");
+
+    const templateParams = {
+      name: form.current.name.value,
+      email: form.current.email.value,
+      message: form.current.message.value,
+    };
+
+    emailjs
+      .send(
+        "service_ekoxe6n",
+        "template_qyvedns",
+        templateParams,
+        "nrDoilgailQb_Mna2"
+      )
+      .then(
+        () => {
+          setStatus("Message sent successfully! ✅");
+          form.current.reset();
+        },
+        (error) => {
+          console.error("EmailJS Error:", error);
+          console.error("Status:", error.status);
+          console.error("Text:", error.text);
+
+          setStatus("Failed to send message. Please try again.");
+        }
+      );
+  };
+
   return (
     <section id="contact" className="section">
 
@@ -49,10 +88,9 @@ function Contact() {
         </div>
 
         <form
+          ref={form}
           className="contact-form"
-          action="mailto:rohitpawar5312@gmail.com"
-          method="POST"
-          encType="text/plain"
+          onSubmit={sendEmail}
         >
 
           <input
@@ -79,6 +117,12 @@ function Contact() {
           <button type="submit">
             Send Message →
           </button>
+
+          {status && (
+            <p className="form-status">
+              {status}
+            </p>
+          )}
 
         </form>
 

@@ -1,105 +1,82 @@
 function Experience() {
   return (
-    <section id="experience" className="section experience-section">
+    <section id="experience" className="section">
 
       <div className="section-header">
-        <p>MY EXPERIENCE</p>
+        <p>MY JOURNEY</p>
 
         <h2>
-          Experience <span>& Training</span>
+          Work <span>Experience</span>
         </h2>
       </div>
 
       <div className="experience-container">
 
-        {/* Experience 01 */}
+        {/* BITMAP TECHNOLOGY */}
         <div className="experience-card">
 
           <div className="experience-date">
-            2025 – 2026
+            Jan 2026 – Apr 2026
           </div>
 
           <div className="experience-content">
 
-            <h3>Data Science & AI Projects</h3>
+            <h3>Machine Learning Intern</h3>
 
-            <h4>Academic & Personal Projects</h4>
+            <h4>BITMAP Technology</h4>
 
             <p>
-              Worked on practical projects using Python, Machine Learning,
-              Artificial Intelligence and Data Analytics. Built models,
-              analyzed datasets and developed solutions for real-world
-              problems.
+              Worked on AI and Machine Learning projects using real-world
+              datasets. Performed data cleaning, preprocessing, feature
+              engineering, and model development. Built, trained, tested,
+              and evaluated predictive machine learning models while
+              collaborating with the team to deliver client projects and
+              AI Proof of Concept (POC) solutions.
             </p>
 
             <div className="experience-tags">
               <span>Python</span>
               <span>Machine Learning</span>
+              <span>Data Preprocessing</span>
+              <span>Feature Engineering</span>
+              <span>Model Development</span>
               <span>AI</span>
-              <span>Data Analytics</span>
             </div>
 
           </div>
 
         </div>
 
-
-        {/* Experience 02 */}
+        {/* RUBIXE */}
         <div className="experience-card">
 
           <div className="experience-date">
-            2024 – 2026
+            Nov 2025 – Apr 2026
           </div>
 
           <div className="experience-content">
 
-            <h3>Technical Training</h3>
+            <h3>AI Expert Consultant Intern</h3>
 
-            <h4>Data Science & AI</h4>
+            <h4>Rubixe Private Limited</h4>
 
             <p>
-              Developed practical knowledge through technical training and
-              hands-on learning in Python, SQL, Machine Learning, Deep
-              Learning, Data Science and Generative AI.
+              Developed AI and Machine Learning models for Flight Fare
+              Prediction, House Price Prediction, Insurance Cost Prediction,
+              Rice Leaf Disease Detection, and Employee Performance Analysis.
+              Performed data preprocessing, feature engineering, model
+              development, evaluation, and predictive analysis while
+              contributing to client projects and AI Proof of Concept (POC)
+              solutions.
             </p>
 
             <div className="experience-tags">
               <span>Python</span>
-              <span>SQL</span>
-              <span>Deep Learning</span>
-              <span>Gen AI</span>
-            </div>
-
-          </div>
-
-        </div>
-
-
-        {/* Experience 03 */}
-        <div className="experience-card">
-
-          <div className="experience-date">
-            Current
-          </div>
-
-          <div className="experience-content">
-
-            <h3>AI & Data Science Development</h3>
-
-            <h4>Continuous Learning</h4>
-
-            <p>
-              Currently improving my skills in Artificial Intelligence,
-              Machine Learning and Data Analytics while building projects
-              and preparing for professional opportunities in the tech
-              industry.
-            </p>
-
-            <div className="experience-tags">
               <span>AI</span>
-              <span>ML</span>
-              <span>Power BI</span>
-              <span>SQL</span>
+              <span>Machine Learning</span>
+              <span>Data Analysis</span>
+              <span>Predictive Modeling</span>
+              <span>Computer Vision</span>
             </div>
 
           </div>
