@@ -1,53 +1,72 @@
 function About() {
   return (
-    <section id="about" className="section about-section">
+    <section id="about" className="section">
+
       <div className="section-header">
-        <p>GET TO KNOW ME</p>
-        <h2>About <span>Me</span></h2>
+        <p>ABOUT ME</p>
+
+        <h2>
+          Who <span>I Am</span>
+        </h2>
       </div>
 
       <div className="about-content">
+
         <div className="about-text">
-          <h3>Passionate about AI, Data & Technology</h3>
+
+          <h3>Building Skills. Creating Solutions.</h3>
 
           <p>
-            I'm a Computer Engineering student with a strong interest in
-            Artificial Intelligence, Machine Learning and Data Science.
+            I am Rohit Shankar Pawar, a Computer Engineering student
+            with a strong interest in Artificial Intelligence, Machine
+            Learning and Data Science.
           </p>
 
           <p>
-            I enjoy transforming data into meaningful insights and building
-            intelligent solutions that can solve real-world problems.
+            I enjoy working with data, building machine learning models
+            and developing AI-based solutions for real-world problems.
           </p>
 
           <p>
-            I'm continuously improving my technical skills through practical
-            projects and hands-on learning.
+            I have practical experience through academic and personal
+            projects using Python, SQL, Machine Learning, Deep Learning,
+            Data Analytics and AI.
           </p>
+
+          <p>
+            My goal is to start my career in AI, Data Science or Data
+            Analytics and continuously improve my technical skills while
+            contributing to meaningful projects.
+          </p>
+
         </div>
 
         <div className="about-card">
+
           <div>
-            <strong>BE</strong>
-            <span>Computer Engineering</span>
+            <strong>7.57</strong>
+            <span>Overall CGPA</span>
           </div>
 
           <div>
-            <strong>AI</strong>
-            <span>Artificial Intelligence</span>
+            <strong>9.20</strong>
+            <span>Last Sem SGPA</span>
           </div>
 
           <div>
-            <strong>ML</strong>
-            <span>Machine Learning</span>
+            <strong>4+</strong>
+            <span>Projects</span>
           </div>
 
           <div>
-            <strong>DS</strong>
-            <span>Data Science</span>
+            <strong>6+</strong>
+            <span>Certifications</span>
           </div>
+
         </div>
+
       </div>
+
     </section>
   );
 }

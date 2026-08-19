@@ -1,62 +1,89 @@
 function Contact() {
   return (
-    <section id="contact" className="section contact-section">
+    <section id="contact" className="section">
+
       <div className="section-header">
         <p>GET IN TOUCH</p>
-        <h2>Let's <span>Connect</span></h2>
+
+        <h2>
+          Let's <span>Connect</span>
+        </h2>
       </div>
 
       <div className="contact-container">
+
         <div className="contact-info">
-          <h3>Have a project or opportunity?</h3>
+
+          <h3>Have a project in mind?</h3>
 
           <p>
-            I'm open to internships, entry-level opportunities,
-            collaborations and interesting AI & Data Science projects.
+            I am open to opportunities in Artificial Intelligence,
+            Machine Learning, Data Science and Data Analytics.
+            Feel free to connect with me.
           </p>
 
           <div className="contact-links">
+
             <a href="mailto:rohitpawar5312@gmail.com">
               📧 rohitpawar5312@gmail.com
             </a>
 
             <a
-              href=" https://github.com/Rohitpawar12-coder"
+              href="https://github.com/Rohitpawar12-coder"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
-              GitHub
+              💻 GitHub
             </a>
 
             <a
-              href=" https://www.linkedin.com/in/rohit-pawar-a2282b351"
+              href="https://www.linkedin.com/"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
             >
-              LinkedIn
+              🔗 LinkedIn
             </a>
+
           </div>
+
         </div>
 
         <form
           className="contact-form"
-          onSubmit={(e) => e.preventDefault()}
+          action="mailto:rohitpawar5312@gmail.com"
+          method="POST"
+          encType="text/plain"
         >
-          <input type="text" placeholder="Your Name" required />
 
-          <input type="email" placeholder="Your Email" required />
-
-          <textarea
-            placeholder="Your Message"
-            rows="6"
+          <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
             required
           />
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+          />
+
+          <textarea
+            name="message"
+            rows="6"
+            placeholder="Your Message"
+            required
+          ></textarea>
 
           <button type="submit">
             Send Message →
           </button>
+
         </form>
+
       </div>
+
     </section>
   );
 }
