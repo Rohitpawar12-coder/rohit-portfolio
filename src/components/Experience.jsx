@@ -18,18 +18,15 @@ const experiences = [
     type: "Internship",
     number: "01",
     icon: BrainCircuit,
-
     summary:
-      "Worked on AI and Machine Learning projects using real-world datasets, contributing to data preparation, predictive modeling, evaluation, and AI Proof of Concept solutions.",
-
+      "Worked on practical Machine Learning and AI solutions using real-world datasets, with hands-on involvement across data preprocessing, feature engineering, model development, evaluation, and AI proof-of-concept implementations.",
     responsibilities: [
       "Performed data cleaning, preprocessing, and feature engineering on real-world datasets.",
-      "Built, trained, tested, and evaluated predictive machine learning models.",
-      "Worked with the team to transform business requirements into practical ML solutions.",
+      "Built, trained, tested, and evaluated supervised machine learning models.",
+      "Analyzed model performance using appropriate evaluation metrics and iterative experimentation.",
+      "Translated business requirements into practical data-driven and machine learning solutions.",
       "Contributed to AI Proof of Concept (POC) solutions and client-oriented projects.",
-      "Analyzed model performance and supported iterative improvements during development.",
     ],
-
     technologies: [
       "Python",
       "Machine Learning",
@@ -49,18 +46,15 @@ const experiences = [
     type: "Internship",
     number: "02",
     icon: Sparkles,
-
     summary:
-      "Developed AI and Machine Learning solutions across multiple predictive analytics and computer vision projects while contributing to client projects and AI Proof of Concept solutions.",
-
+      "Worked across AI, Machine Learning, Deep Learning, Computer Vision, and predictive analytics projects while contributing to client-focused solutions and AI Proof of Concept implementations.",
     responsibilities: [
-      "Developed machine learning models for Flight Fare Prediction, House Price Prediction, and Insurance Cost Prediction.",
+      "Developed predictive ML solutions for Flight Fare, House Price, and Insurance Cost Prediction.",
       "Worked on Rice Leaf Disease Detection using computer vision and deep learning techniques.",
-      "Performed Employee Performance Analysis using data-driven predictive approaches.",
-      "Applied data preprocessing, feature engineering, model development, and model evaluation techniques.",
-      "Contributed to predictive analysis and AI Proof of Concept (POC) solutions for client projects.",
+      "Performed Employee Performance Analysis using exploratory and predictive approaches.",
+      "Applied data preprocessing, feature engineering, model development, and evaluation techniques.",
+      "Contributed to AI Proof of Concept solutions and supported practical client project requirements.",
     ],
-
     technologies: [
       "Python",
       "Machine Learning",
@@ -79,15 +73,23 @@ function Experience() {
     <section id="experience" className="experience-section">
       <div className="experience-background">
         <div className="experience-grid"></div>
+
         <div className="experience-glow experience-glow-one"></div>
+
         <div className="experience-glow experience-glow-two"></div>
       </div>
 
       <div className="container experience-container">
-        {/* SECTION HEADER */}
+
+        {/* =========================
+            SECTION HEADER
+        ========================== */}
+
         <div className="section-heading experience-heading">
+
           <div className="section-eyebrow">
             <span className="eyebrow-line"></span>
+
             <span>Professional Journey</span>
           </div>
 
@@ -97,17 +99,21 @@ function Experience() {
           </h2>
 
           <p>
-            Hands-on experience in Machine Learning, Artificial
-            Intelligence, predictive analytics, and real-world
-            AI solutions.
+            Hands-on experience across Machine Learning, Artificial
+            Intelligence, predictive analytics, computer vision, and
+            real-world data-driven solutions.
           </p>
         </div>
 
-        {/* EXPERIENCE TIMELINE */}
+        {/* =========================
+            EXPERIENCE TIMELINE
+        ========================== */}
+
         <div className="experience-timeline">
+
           <div className="timeline-line"></div>
 
-          {experiences.map((experience, index) => {
+          {experiences.map((experience) => {
             const Icon = experience.icon;
 
             return (
@@ -115,20 +121,27 @@ function Experience() {
                 className="experience-item"
                 key={`${experience.company}-${experience.role}`}
               >
-                {/* TIMELINE NODE */}
+
+                {/* Timeline Node */}
+
                 <div className="timeline-node">
                   <span>{experience.number}</span>
                 </div>
 
-                {/* EXPERIENCE CARD */}
+                {/* Experience Card */}
+
                 <div className="experience-card">
-                  {/* CARD TOP */}
+
+                  {/* Card Header */}
+
                   <div className="experience-card-top">
+
                     <div className="experience-company-mark">
                       <Icon size={25} strokeWidth={1.8} />
                     </div>
 
                     <div className="experience-meta">
+
                       <span className="experience-type">
                         {experience.type}
                       </span>
@@ -136,16 +149,20 @@ function Experience() {
                       <span className="experience-number">
                         {experience.number}
                       </span>
+
                     </div>
                   </div>
 
-                  {/* TITLE */}
+                  {/* Title */}
+
                   <div className="experience-title-block">
+
                     <h3>{experience.role}</h3>
 
                     <h4>{experience.company}</h4>
 
                     <div className="experience-details">
+
                       <span>
                         <CalendarDays size={15} />
                         {experience.period}
@@ -155,47 +172,64 @@ function Experience() {
                         <MapPin size={15} />
                         {experience.location}
                       </span>
+
                     </div>
                   </div>
 
-                  {/* SUMMARY */}
+                  {/* Summary */}
+
                   <p className="experience-summary">
                     {experience.summary}
                   </p>
 
-                  {/* DIVIDER */}
                   <div className="experience-divider"></div>
 
-                  {/* RESPONSIBILITIES */}
+                  {/* Responsibilities */}
+
                   <div className="experience-responsibilities">
+
                     <div className="experience-subheading">
+
                       <Code2 size={17} />
+
                       <span>Key Responsibilities</span>
+
                     </div>
 
                     <div className="responsibility-list">
+
                       {experience.responsibilities.map(
                         (responsibility) => (
                           <div
                             className="responsibility-item"
                             key={responsibility}
                           >
+
                             <CheckCircle2 size={16} />
+
                             <p>{responsibility}</p>
+
                           </div>
                         )
                       )}
+
                     </div>
                   </div>
 
-                  {/* TECHNOLOGIES */}
+                  {/* Technologies */}
+
                   <div className="experience-tech-section">
+
                     <div className="experience-subheading">
+
                       <Database size={17} />
+
                       <span>Technologies & Skills</span>
+
                     </div>
 
                     <div className="experience-tech-list">
+
                       {experience.technologies.map((technology) => (
                         <span
                           className="experience-tech"
@@ -204,28 +238,38 @@ function Experience() {
                           {technology}
                         </span>
                       ))}
+
                     </div>
                   </div>
 
-                  {/* BOTTOM ACCENT */}
+                  {/* Footer */}
+
                   <div className="experience-card-footer">
+
                     <span>AI / ML</span>
 
                     <ChevronRight size={18} />
+
                   </div>
+
                 </div>
               </article>
             );
           })}
         </div>
 
-        {/* EXPERIENCE SUMMARY */}
+        {/* =========================
+            EXPERIENCE SUMMARY
+        ========================== */}
+
         <div className="experience-summary-card">
+
           <div className="summary-icon">
             <BrainCircuit size={25} />
           </div>
 
           <div className="summary-content">
+
             <span className="summary-label">
               EXPERIENCE FOCUS
             </span>
@@ -236,14 +280,15 @@ function Experience() {
             </h3>
 
             <p>
-              My experience combines machine learning,
-              deep learning, data preprocessing, feature
-              engineering, predictive analysis, and
-              computer vision with real-world project
+              My experience combines machine learning, deep learning,
+              data preprocessing, feature engineering, predictive
+              analytics, and computer vision with real-world project
               requirements.
             </p>
+
           </div>
         </div>
+
       </div>
     </section>
   );

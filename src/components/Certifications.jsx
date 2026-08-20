@@ -2,184 +2,129 @@ import {
   ArrowUpRight,
   Award,
   BadgeCheck,
-  BrainCircuit,
-  CalendarDays,
-  Code2,
-  Database,
-  FileCheck2,
-  LineChart,
+  ExternalLink,
   Sparkles,
 } from "lucide-react";
 
 const certifications = [
   {
-    title: "Artificial Intelligence Expert",
-    issuer: "IABAC",
-    year: "2026",
-    category: "Artificial Intelligence",
-    icon: BrainCircuit,
-    featured: true,
-  },
-  {
-    title: "Certified Data Scientist",
-    issuer: "IABAC",
-    year: "2026",
-    category: "Data Science",
-    icon: LineChart,
-    featured: true,
-  },
-  {
-    title: "Data Science Foundation",
-    issuer: "IABAC",
-    year: "2026",
-    category: "Data Science",
-    icon: Database,
-  },
-  {
-    title: "AI Engineer Course",
+    title: "Data Science Internship",
     issuer: "DataMites",
-    year: "2025 – 2026",
-    category: "AI Engineering",
-    icon: Sparkles,
+    category: "Data Science",
+    description:
+      "Hands-on exposure to data science workflows including data preprocessing, analysis, visualization, and machine learning.",
   },
   {
-    title: "Microsoft Power BI",
-    issuer: "Skill Course",
-    year: "2026",
+    title: "Data Visualization",
+    issuer: "Tata Forage",
     category: "Data Analytics",
-    icon: LineChart,
+    description:
+      "Practical experience with data visualization, analytical thinking, and presenting insights from business data.",
   },
   {
-    title: "Python Programming",
-    issuer: "TechMaster",
-    year: "2024",
-    category: "Programming",
-    icon: Code2,
+    title: "Artificial Intelligence Internship",
+    issuer: "Rubixe",
+    category: "Artificial Intelligence",
+    description:
+      "Practical exposure to AI, machine learning, deep learning, computer vision, and predictive analytics projects.",
+  },
+  {
+    title: "AI & ML Internship",
+    issuer: "Anudip Foundation",
+    category: "AI / ML",
+    description:
+      "Worked with fundamental AI and machine learning concepts and applied them to practical project-based learning.",
+  },
+  {
+    title: "NPTEL Certification",
+    issuer: "NPTEL",
+    category: "Technical Learning",
+    description:
+      "Completed technical coursework through NPTEL with a focus on strengthening computer science and analytical fundamentals.",
+  },
+  {
+    title: "Powerskill & Fundamentals of Electric Vehicle",
+    issuer: "Training Program",
+    category: "Technical Training",
+    description:
+      "Completed technical training covering electric vehicle fundamentals, technology, and industry-oriented concepts.",
   },
 ];
 
 function Certifications() {
   return (
-    <section
-      id="certifications"
-      className="certifications-section"
-    >
-      <div className="certifications-background">
-        <div className="certifications-grid"></div>
-        <div className="certifications-glow certifications-glow-one"></div>
-        <div className="certifications-glow certifications-glow-two"></div>
+    <section id="certifications" className="section certifications-section">
+      <div className="section-header">
+        <p>CERTIFICATIONS</p>
+
+        <h2>
+          Learning Beyond the <span>Classroom.</span>
+        </h2>
       </div>
 
-      <div className="container certifications-container">
-        {/* HEADER */}
-        <div className="section-heading certifications-heading">
-          <div className="section-eyebrow">
-            <span className="eyebrow-line"></span>
-            <span>Professional Credentials</span>
-          </div>
+      <div className="certifications-grid">
+        {certifications.map((certificate, index) => (
+          <article
+            className="certification-card"
+            key={`${certificate.title}-${certificate.issuer}`}
+          >
+            <div className="certification-top">
+              <div className="certification-icon">
+                {index < 3 ? (
+                  <Award size={21} />
+                ) : (
+                  <BadgeCheck size={21} />
+                )}
+              </div>
 
-          <h2>
-            Certifications That
-            <span> Strengthen My Expertise.</span>
-          </h2>
+              <span className="certification-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+            </div>
 
-          <p>
-            Continuous learning through industry-focused
-            certifications in Artificial Intelligence, Data
-            Science, Python, and Data Analytics.
-          </p>
-        </div>
+            <div className="certification-category">
+              {certificate.category}
+            </div>
 
-        {/* CERTIFICATION GRID */}
-        <div className="certifications-grid-layout">
-          {certifications.map((certificate, index) => {
-            const Icon = certificate.icon;
+            <h3>{certificate.title}</h3>
 
-            return (
-              <article
-                className={`certification-card ${
-                  certificate.featured
-                    ? "certification-card-featured"
-                    : ""
-                }`}
-                key={`${certificate.title}-${certificate.issuer}`}
+            <h4>{certificate.issuer}</h4>
+
+            <p>{certificate.description}</p>
+
+            <div className="certification-footer">
+              <span>
+                <Sparkles size={13} />
+                Verified Learning
+              </span>
+
+              <button
+                type="button"
+                aria-label={`View ${certificate.title}`}
+                className="certification-action"
               >
-                {/* TOP */}
-                <div className="certification-card-top">
-                  <div className="certification-icon">
-                    <Icon
-                      size={23}
-                      strokeWidth={1.8}
-                    />
-                  </div>
+                <ExternalLink size={15} />
+              </button>
+            </div>
+          </article>
+        ))}
+      </div>
 
-                  <span className="certification-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-
-                {/* CATEGORY */}
-                <div className="certification-category">
-                  {certificate.category}
-                </div>
-
-                {/* TITLE */}
-                <h3>{certificate.title}</h3>
-
-                {/* ISSUER */}
-                <div className="certification-issuer">
-                  <BadgeCheck size={17} />
-                  <span>{certificate.issuer}</span>
-                </div>
-
-                {/* DATE */}
-                <div className="certification-date">
-                  <CalendarDays size={15} />
-                  <span>{certificate.year}</span>
-                </div>
-
-                {/* FOOTER */}
-                <div className="certification-footer">
-                  <div className="credential-status">
-                    <span className="credential-dot"></span>
-                    <span>Credential</span>
-                  </div>
-
-                  <div className="credential-icon">
-                    <FileCheck2 size={17} />
-                  </div>
-                </div>
-              </article>
-            );
-          })}
+      <div className="certifications-bottom">
+        <div className="certifications-bottom-icon">
+          <BadgeCheck size={23} />
         </div>
 
-        {/* CERTIFICATION SUMMARY */}
-        <div className="certification-summary">
-          <div className="certification-summary-icon">
-            <Award size={26} />
-          </div>
+        <div>
+          <span>CONTINUOUS LEARNING</span>
 
-          <div className="certification-summary-content">
-            <span>CONTINUOUS LEARNING</span>
-
-            <h3>
-              Always learning.
-              <strong> Always building.</strong>
-            </h3>
-
-            <p>
-              My certifications complement hands-on project
-              experience and help me continuously strengthen
-              my skills across AI, Machine Learning, Data
-              Science, Python, and Business Intelligence.
-            </p>
-          </div>
-
-          <div className="certification-summary-mark">
-            <Sparkles size={21} />
-          </div>
+          <h3>
+            Always building stronger
+            <strong> technical fundamentals.</strong>
+          </h3>
         </div>
+
+        <ArrowUpRight size={22} />
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 import {
   ArrowUpRight,
-  BrainCircuit,
   BarChart3,
+  BrainCircuit,
   Code2,
   ExternalLink,
   Layers3,
@@ -13,7 +13,7 @@ const projects = [
     title: "AI Resume Screening & Job Matching",
     category: "Artificial Intelligence",
     description:
-      "An AI-powered system designed to analyze resumes, extract relevant information, evaluate candidate profiles, and support job matching using NLP and machine learning techniques.",
+      "An AI-powered recruitment solution that analyzes resumes, extracts relevant candidate information, evaluates profiles, and supports job matching using NLP and machine learning techniques.",
     technologies: [
       "Python",
       "NLP",
@@ -31,7 +31,7 @@ const projects = [
     title: "Rice Leaf Disease Detection",
     category: "Deep Learning / Computer Vision",
     description:
-      "A computer vision project for detecting rice leaf diseases from images using deep learning and image processing techniques.",
+      "A computer vision solution for identifying rice leaf diseases from images using deep learning, image processing, and convolutional neural network techniques.",
     technologies: [
       "Python",
       "TensorFlow",
@@ -49,7 +49,7 @@ const projects = [
     title: "House Price Prediction",
     category: "Machine Learning",
     description:
-      "A predictive machine learning solution that analyzes property-related features and estimates house prices using regression techniques.",
+      "A regression-based machine learning solution that analyzes property features and estimates house prices through data preprocessing, exploratory analysis, and predictive modeling.",
     technologies: [
       "Python",
       "Pandas",
@@ -66,7 +66,7 @@ const projects = [
     title: "Employee Performance Analysis",
     category: "Data Science",
     description:
-      "A data-driven project focused on analyzing employee performance and extracting meaningful insights from workforce data.",
+      "A data-driven analysis project focused on understanding employee performance, identifying patterns, and extracting actionable insights from workforce data.",
     technologies: [
       "Python",
       "Pandas",
@@ -83,7 +83,7 @@ const projects = [
     title: "Telecom Churn Prediction",
     category: "Machine Learning",
     description:
-      "A machine learning classification project designed to identify customers who are likely to churn based on telecom customer behavior and usage patterns.",
+      "A classification-based machine learning solution that identifies customers at risk of churn using telecom usage behavior, customer attributes, exploratory analysis, and predictive modeling.",
     technologies: [
       "Python",
       "Pandas",
@@ -100,7 +100,7 @@ const projects = [
     title: "Car Sales Analysis",
     category: "Data Analytics",
     description:
-      "An exploratory data analysis project focused on understanding car sales trends, patterns, and business insights from sales data.",
+      "An exploratory data analysis project focused on identifying car sales trends, customer patterns, and business insights through data analysis and visualization.",
     technologies: [
       "Python",
       "Pandas",
@@ -117,17 +117,33 @@ const projects = [
 function Projects() {
   return (
     <section id="projects" className="projects-section">
+
+      {/* Background */}
+
       <div className="projects-background">
+
         <div className="projects-grid"></div>
+
         <div className="projects-glow projects-glow-one"></div>
+
         <div className="projects-glow projects-glow-two"></div>
+
       </div>
 
       <div className="container projects-container">
+
+        {/* =========================
+            SECTION HEADER
+        ========================== */}
+
         <div className="section-heading projects-heading">
+
           <div className="section-eyebrow">
+
             <span className="eyebrow-line"></span>
+
             <span>Selected Work</span>
+
           </div>
 
           <h2>
@@ -136,14 +152,21 @@ function Projects() {
           </h2>
 
           <p>
-            A collection of AI, Machine Learning, Data Science,
-            Computer Vision, and Data Analytics projects built
-            through hands-on development.
+            A collection of Artificial Intelligence, Machine Learning,
+            Data Science, Computer Vision, and Data Analytics projects
+            developed through hands-on implementation.
           </p>
+
         </div>
 
+        {/* =========================
+            PROJECT GRID
+        ========================== */}
+
         <div className="projects-grid-layout">
+
           {projects.map((project, index) => {
+
             const Icon = project.icon;
 
             return (
@@ -153,35 +176,58 @@ function Projects() {
                 }`}
                 key={project.title}
               >
+
+                {/* Top */}
+
                 <div className="project-card-top">
+
                   <div className="project-icon">
-                    <Icon size={23} strokeWidth={1.7} />
+
+                    <Icon
+                      size={23}
+                      strokeWidth={1.7}
+                    />
+
                   </div>
 
                   <span className="project-number">
                     {String(index + 1).padStart(2, "0")}
                   </span>
+
                 </div>
+
+                {/* Category */}
 
                 <div className="project-category">
                   {project.category}
                 </div>
 
+                {/* Title */}
+
                 <h3>{project.title}</h3>
+
+                {/* Description */}
 
                 <p className="project-description">
                   {project.description}
                 </p>
 
+                {/* Technologies */}
+
                 <div className="project-tech-list">
+
                   {project.technologies.map((technology) => (
                     <span key={technology}>
                       {technology}
                     </span>
                   ))}
+
                 </div>
 
+                {/* Actions */}
+
                 <div className="project-actions">
+
                   <a
                     href={project.github}
                     target="_blank"
@@ -189,9 +235,13 @@ function Projects() {
                     className="project-github-btn"
                     aria-label={`Open ${project.title} GitHub repository`}
                   >
+
                     <Code2 size={17} />
+
                     <span>View on GitHub</span>
+
                     <ArrowUpRight size={16} />
+
                   </a>
 
                   <a
@@ -201,16 +251,27 @@ function Projects() {
                     className="project-external-btn"
                     aria-label={`Open ${project.title} repository`}
                   >
+
                     <ExternalLink size={17} />
+
                   </a>
+
                 </div>
+
               </article>
             );
           })}
+
         </div>
 
+        {/* =========================
+            GITHUB CTA
+        ========================== */}
+
         <div className="projects-bottom">
+
           <div>
+
             <span className="projects-bottom-label">
               MORE PROJECTS
             </span>
@@ -219,6 +280,7 @@ function Projects() {
               Explore my complete
               <span> GitHub portfolio.</span>
             </h3>
+
           </div>
 
           <a
@@ -227,12 +289,19 @@ function Projects() {
             rel="noopener noreferrer"
             className="projects-github-link"
           >
+
             <Code2 size={18} />
+
             <span>Visit GitHub</span>
+
             <ArrowUpRight size={18} />
+
           </a>
+
         </div>
+
       </div>
+
     </section>
   );
 }
