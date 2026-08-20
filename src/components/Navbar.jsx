@@ -16,6 +16,9 @@ function Navbar() {
     { id: "contact", label: "Contact" },
   ];
 
+  const GITHUB_URL = "https://github.com/Rohitpawar12-coder";
+  const LINKEDIN_URL = "https://www.linkedin.com/in/rohit-pawar-a2282b351/";
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 30);
@@ -37,7 +40,7 @@ function Navbar() {
       setActiveSection(current);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
 
     handleScroll();
 
@@ -62,11 +65,12 @@ function Navbar() {
   return (
     <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
       <div className="navbar-container">
-
         {/* Logo */}
         <button
+          type="button"
           className="navbar-logo"
           onClick={() => handleNavigation("home")}
+          aria-label="Go to homepage"
         >
           <span className="logo-mark">R</span>
 
@@ -76,9 +80,10 @@ function Navbar() {
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="desktop-nav">
+        <nav className="desktop-nav" aria-label="Main navigation">
           {navItems.map((item) => (
             <button
+              type="button"
               key={item.id}
               onClick={() => handleNavigation(item.id)}
               className={
@@ -94,50 +99,56 @@ function Navbar() {
 
         {/* Desktop Actions */}
         <div className="navbar-actions">
-
           <a
-            href="https://github.com/Rohitpawar12-coder"
+            href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="nav-social"
-            aria-label="GitHub"
+            aria-label="Open Rohit's GitHub profile"
           >
             <span className="social-text">GH</span>
           </a>
 
           <a
-            href="https://www.linkedin.com/"
+            href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="nav-social"
-            aria-label="LinkedIn"
+            aria-label="Open Rohit's LinkedIn profile"
           >
             <span className="social-text">in</span>
           </a>
 
           <button
+            type="button"
             className="nav-contact-btn"
             onClick={() => handleNavigation("contact")}
           >
             Let's Talk
           </button>
-
         </div>
 
         {/* Mobile Menu Button */}
         <button
+          type="button"
           className="mobile-menu-btn"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          onClick={() => setIsOpen((previous) => !previous)}
+          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
         >
           {isOpen ? <X size={23} /> : <Menu size={23} />}
         </button>
       </div>
 
       {/* Mobile Navigation */}
-      <div className={`mobile-nav ${isOpen ? "mobile-nav-open" : ""}`}>
+      <div
+        id="mobile-navigation"
+        className={`mobile-nav ${isOpen ? "mobile-nav-open" : ""}`}
+      >
         {navItems.map((item) => (
           <button
+            type="button"
             key={item.id}
             className={
               activeSection === item.id
@@ -151,25 +162,25 @@ function Navbar() {
         ))}
 
         <div className="mobile-socials">
-
           <a
-            href="https://github.com/Rohitpawar12-coder"
+            href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Open Rohit's GitHub profile"
           >
             <span className="social-text">GH</span>
             GitHub
           </a>
 
           <a
-            href="https://www.linkedin.com/"
+            href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Open Rohit's LinkedIn profile"
           >
             <span className="social-text">in</span>
             LinkedIn
           </a>
-
         </div>
       </div>
     </header>
