@@ -1,72 +1,190 @@
+import {
+  GraduationCap,
+  CalendarDays,
+  MapPin,
+  BookOpen,
+} from "lucide-react";
+
 function Education() {
+  const education = [
+    {
+      degree: "B.Tech — Computer Science & Engineering",
+      specialization: "Data Science",
+      institution: "Shree Ramchandra College of Engineering",
+      location: "Pune, Maharashtra",
+      period: "2026 — Present",
+      status: "Currently Pursuing",
+      description:
+        "Building a strong foundation in computer science, data science, artificial intelligence, machine learning, databases, and software development.",
+    },
+  ];
+
+  const coursework = [
+    "Data Structures & Algorithms",
+    "Database Management Systems",
+    "Python Programming",
+    "Machine Learning",
+    "Artificial Intelligence",
+    "Data Science",
+    "Statistics",
+    "Computer Networks",
+  ];
+
   return (
-    <section id="education" className="section">
+    <section id="education" className="education-section">
+      <div className="container">
 
-      <div className="section-header">
-        <p>MY EDUCATION</p>
+        {/* =========================
+            SECTION HEADER
+        ========================== */}
 
-        <h2>
-          Education <span>Journey</span>
-        </h2>
-      </div>
+        <div className="section-heading education-heading">
 
-      <div className="education-container">
-
-        <div className="education-card">
-
-          <div className="education-year">
-            2022 – 2026
+          <div className="section-label">
+            <span></span>
+            EDUCATION
           </div>
 
-          <div className="education-content">
-            <h3>BE – Computer Engineering</h3>
-
-            <h4>
-              Shree Ramchandra College of Engineering
-            </h4>
-
-            <p>
-              Bachelor of Engineering in Computer Engineering with a
-              strong focus on Artificial Intelligence, Machine Learning,
-              Data Science and Software Development.
-            </p>
-
-            <span>
-              Overall CGPA: <strong>7.57 / 10</strong>
-            </span>
-
+          <h2>
+            Building the foundation
             <br />
+            <span>behind the skills.</span>
+          </h2>
 
-            <span>
-              Last Semester SGPA: <strong>9.20 / 10</strong>
-            </span>
+          <p>
+            My academic journey is focused on computer science,
+            data science, artificial intelligence, and practical
+            technology development.
+          </p>
+
+        </div>
+
+        {/* =========================
+            EDUCATION CARD
+        ========================== */}
+
+        <div className="education-layout">
+
+          <div className="education-card">
+
+            <div className="education-card-top">
+
+              <div className="education-icon">
+                <GraduationCap size={25} />
+              </div>
+
+              <span className="education-status">
+                Currently Pursuing
+              </span>
+
+            </div>
+
+            <div className="education-content">
+
+              <span className="education-label">
+                UNDERGRADUATE DEGREE
+              </span>
+
+              <h3>
+                {education[0].degree}
+              </h3>
+
+              <h4>
+                {education[0].specialization}
+              </h4>
+
+              <div className="education-meta">
+
+                <span>
+                  <BookOpen size={14} />
+                  {education[0].institution}
+                </span>
+
+                <span>
+                  <MapPin size={14} />
+                  {education[0].location}
+                </span>
+
+                <span>
+                  <CalendarDays size={14} />
+                  {education[0].period}
+                </span>
+
+              </div>
+
+              <p>
+                {education[0].description}
+              </p>
+
+            </div>
+
+          </div>
+
+          {/* =========================
+              COURSEWORK
+          ========================== */}
+
+          <div className="coursework-card">
+
+            <div className="coursework-header">
+
+              <span className="section-label">
+                <span></span>
+                CORE COURSEWORK
+              </span>
+
+              <p>
+                Areas supporting my technical development.
+              </p>
+
+            </div>
+
+            <div className="coursework-list">
+
+              {coursework.map((subject) => (
+                <div
+                  className="coursework-item"
+                  key={subject}
+                >
+                  <span className="coursework-dot"></span>
+
+                  <span>{subject}</span>
+                </div>
+              ))}
+
+            </div>
+
           </div>
 
         </div>
 
-        <div className="education-card">
+        {/* =========================
+            ACADEMIC FOCUS
+        ========================== */}
 
-          <div className="education-year">
-            Higher Secondary
+        <div className="academic-focus">
+
+          <div className="academic-focus-title">
+            <span className="academic-pulse"></span>
+
+            <span>
+              ACADEMIC FOCUS
+            </span>
           </div>
 
-          <div className="education-content">
-            <h3>Higher Secondary Education</h3>
+          <div className="academic-focus-items">
 
-            <h4>
-              Shri Fattechand Jain Vidyalaya & Junior College
-            </h4>
+            <span>Artificial Intelligence</span>
+            <span>Machine Learning</span>
+            <span>Data Science</span>
+            <span>Analytics</span>
+            <span>Software Development</span>
 
-            <p>
-              Completed higher secondary education with a foundation
-              in mathematics, science and computer-related subjects.
-            </p>
           </div>
 
         </div>
 
       </div>
-
     </section>
   );
 }

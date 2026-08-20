@@ -1,90 +1,257 @@
+import {
+  BriefcaseBusiness,
+  Award,
+  ExternalLink,
+  CalendarDays,
+} from "lucide-react";
+
 function Experience() {
+  const experiences = [
+    {
+      type: "Experience",
+      title: "AI / Machine Learning Intern",
+      company: "Rubixe",
+      period: "Internship",
+      description:
+        "Worked on machine learning concepts, data preprocessing, model development, and practical AI/ML problem-solving.",
+      skills: [
+        "Python",
+        "Machine Learning",
+        "Data Analysis",
+        "Scikit-learn",
+      ],
+    },
+    {
+      type: "Experience",
+      title: "Data Analytics Intern",
+      company: "Tata Forage",
+      period: "Virtual Internship",
+      description:
+        "Worked on data visualization and analytical tasks, transforming business data into meaningful insights and reports.",
+      skills: [
+        "Data Analytics",
+        "Data Visualization",
+        "Power BI",
+        "Business Insights",
+      ],
+    },
+    {
+      type: "Experience",
+      title: "Data Science / AI Intern",
+      company: "DataMites",
+      period: "Internship",
+      description:
+        "Gained practical exposure to data science workflows including Python, exploratory data analysis, machine learning, and model evaluation.",
+      skills: [
+        "Python",
+        "Pandas",
+        "EDA",
+        "Machine Learning",
+      ],
+    },
+  ];
+
+  const certifications = [
+    {
+      title: "Data Science Certification",
+      issuer: "DataMites",
+      icon: Award,
+    },
+    {
+      title: "Data Visualization Internship",
+      issuer: "Tata Forage",
+      icon: Award,
+    },
+    {
+      title: "AI / ML Internship",
+      issuer: "Rubixe",
+      icon: Award,
+    },
+    {
+      title: "NPTEL Certification",
+      issuer: "NPTEL",
+      icon: Award,
+    },
+  ];
+
   return (
-    <section id="experience" className="section">
+    <section id="experience" className="experience-section">
+      <div className="container">
 
-      <div className="section-header">
-        <p>MY JOURNEY</p>
+        {/* =========================
+            HEADER
+        ========================== */}
 
-        <h2>
-          Work <span>Experience</span>
-        </h2>
-      </div>
+        <div className="section-heading experience-heading">
 
-      <div className="experience-container">
-
-        {/* BITMAP TECHNOLOGY */}
-        <div className="experience-card">
-
-          <div className="experience-date">
-            Jan 2026 – Apr 2026
+          <div className="section-label">
+            <span></span>
+            EXPERIENCE & CREDENTIALS
           </div>
 
-          <div className="experience-content">
+          <h2>
+            Experience that builds
+            <br />
+            <span>real-world skills.</span>
+          </h2>
 
-            <h3>Machine Learning Intern</h3>
+          <p>
+            My learning journey combines internships, practical projects,
+            technical training, and continuous development across AI,
+            machine learning, and data analytics.
+          </p>
 
-            <h4>BITMAP Technology</h4>
+        </div>
 
-            <p>
-              Worked on AI and Machine Learning projects using real-world
-              datasets. Performed data cleaning, preprocessing, feature
-              engineering, and model development. Built, trained, tested,
-              and evaluated predictive machine learning models while
-              collaborating with the team to deliver client projects and
-              AI Proof of Concept (POC) solutions.
-            </p>
+        {/* =========================
+            EXPERIENCE
+        ========================== */}
 
-            <div className="experience-tags">
-              <span>Python</span>
-              <span>Machine Learning</span>
-              <span>Data Preprocessing</span>
-              <span>Feature Engineering</span>
-              <span>Model Development</span>
-              <span>AI</span>
+        <div className="experience-layout">
+
+          <div className="experience-column">
+
+            <div className="subsection-title">
+              <BriefcaseBusiness size={18} />
+              <span>Experience</span>
+            </div>
+
+            <div className="timeline">
+
+              {experiences.map((experience, index) => (
+                <article
+                  className="timeline-item"
+                  key={`${experience.company}-${index}`}
+                >
+
+                  <div className="timeline-marker">
+                    <span></span>
+                  </div>
+
+                  <div className="timeline-content">
+
+                    <div className="timeline-top">
+
+                      <div>
+                        <span className="timeline-type">
+                          {experience.type}
+                        </span>
+
+                        <h3>
+                          {experience.title}
+                        </h3>
+
+                        <h4>
+                          {experience.company}
+                        </h4>
+                      </div>
+
+                      <div className="timeline-period">
+                        <CalendarDays size={13} />
+                        {experience.period}
+                      </div>
+
+                    </div>
+
+                    <p>
+                      {experience.description}
+                    </p>
+
+                    <div className="experience-skills">
+                      {experience.skills.map((skill) => (
+                        <span key={skill}>
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+
+                  </div>
+
+                </article>
+              ))}
+
+            </div>
+
+          </div>
+
+          {/* =========================
+              CERTIFICATIONS
+          ========================== */}
+
+          <div className="certifications-column">
+
+            <div className="subsection-title">
+              <Award size={18} />
+              <span>Certifications</span>
+            </div>
+
+            <div className="certification-list">
+
+              {certifications.map((certificate) => {
+                const Icon = certificate.icon;
+
+                return (
+                  <article
+                    className="certificate-card"
+                    key={certificate.title}
+                  >
+
+                    <div className="certificate-icon">
+                      <Icon size={19} />
+                    </div>
+
+                    <div className="certificate-content">
+
+                      <h3>
+                        {certificate.title}
+                      </h3>
+
+                      <p>
+                        {certificate.issuer}
+                      </p>
+
+                    </div>
+
+                    <span className="certificate-arrow">
+                      <ExternalLink size={15} />
+                    </span>
+
+                  </article>
+                );
+              })}
+
+            </div>
+
+            {/* Learning Card */}
+
+            <div className="learning-card">
+
+              <div className="learning-card-icon">
+                <span></span>
+              </div>
+
+              <div>
+                <span className="learning-label">
+                  CURRENTLY LEARNING
+                </span>
+
+                <h3>
+                  Generative AI & Modern AI Systems
+                </h3>
+
+                <p>
+                  Exploring LLMs, AI agents, deployment,
+                  and production-ready AI applications.
+                </p>
+              </div>
+
             </div>
 
           </div>
 
         </div>
 
-        {/* RUBIXE */}
-        <div className="experience-card">
-
-          <div className="experience-date">
-            Nov 2025 – Apr 2026
-          </div>
-
-          <div className="experience-content">
-
-            <h3>AI Expert Consultant Intern</h3>
-
-            <h4>Rubixe Private Limited</h4>
-
-            <p>
-              Developed AI and Machine Learning models for Flight Fare
-              Prediction, House Price Prediction, Insurance Cost Prediction,
-              Rice Leaf Disease Detection, and Employee Performance Analysis.
-              Performed data preprocessing, feature engineering, model
-              development, evaluation, and predictive analysis while
-              contributing to client projects and AI Proof of Concept (POC)
-              solutions.
-            </p>
-
-            <div className="experience-tags">
-              <span>Python</span>
-              <span>AI</span>
-              <span>Machine Learning</span>
-              <span>Data Analysis</span>
-              <span>Predictive Modeling</span>
-              <span>Computer Vision</span>
-            </div>
-
-          </div>
-
-        </div>
-
       </div>
-
     </section>
   );
 }
