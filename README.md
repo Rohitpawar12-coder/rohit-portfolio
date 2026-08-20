@@ -1,21 +1,71 @@
-<<<<<<< HEAD
-# React + Vite
+# Rohit Pawar — AI/ML & Data Science Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive personal portfolio built with React and Vite to showcase my projects, technical skills, experience, education, certifications, and contact information.
 
-Currently, two official plugins are available:
+## 👨‍💻 About Me
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+I am Rohit Pawar, an aspiring AI/ML Engineer and Data Scientist with an interest in Machine Learning, Artificial Intelligence, Data Science, Data Analytics, Python, SQL, and Power BI.
 
-## React Compiler
+This portfolio highlights my practical projects and technical journey.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tech Stack
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- JavaScript
+- HTML5
+- CSS3
+- Lucide React
+- EmailJS
+- Git
+- GitHub
+- Vercel
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-=======
-# rohit-portfolio
-My personal portfolio showcasing my skills, projects, certifications, and experience in **Python, Data Science, Machine Learning, AI, SQL, and Data Analytics**.
->>>>>>> 47fa834fe2bbb750cbeedb0bc69b81e11d5594f3
+## 📂 Portfolio Sections
+
+- Home
+- About
+- Skills
+- Experience
+- Projects
+- Education
+- Certifications
+- Contact
+
+## 🤖 Featured Projects
+
+### AI Resume Screening & Job Matching System
+
+AI-powered resume screening and job matching system using Natural Language Processing and Machine Learning.
+
+### Employee Performance Analysis
+
+Data analytics project focused on employee productivity, performance analysis, and business insights.
+
+### Car Sales Analysis
+
+Data analysis project focused on car sales trends, visualization, and exploratory data analysis.
+
+### Telecom Churn Prediction
+
+Machine learning project that predicts telecom customer churn using classification algorithms.
+
+### Rice Leaf Disease Detection
+
+Deep learning computer vision project for identifying rice leaf diseases using image classification.
+
+### House Price Prediction
+
+Machine learning regression project for predicting house prices from property-related features.
+
+## 🔗 Profiles
+
+- GitHub: https://github.com/Rohitpawar12-coder
+- LinkedIn: https://www.linkedin.com/in/rohit-pawar-a2282b351/
+
+## 🛠️ Run Locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Rohitpawar12-coder/rohit-portfolio.git

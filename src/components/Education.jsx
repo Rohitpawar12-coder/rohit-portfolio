@@ -1,189 +1,188 @@
 import {
-  GraduationCap,
-  CalendarDays,
-  MapPin,
+  Award,
   BookOpen,
+  CalendarDays,
+  GraduationCap,
+  MapPin,
+  Trophy,
 } from "lucide-react";
 
+const education = [
+  {
+    degree: "Bachelor of Engineering",
+    field: "Computer Engineering",
+    institution: "Savitribai Phule Pune University",
+    period: "2022 – 2026",
+    location: "Pune, Maharashtra",
+    status: "Final Year",
+    score: "7.57 CGPA",
+    highlight: "First Class",
+    finalYear: "9.20 SGPA",
+    icon: GraduationCap,
+  },
+  {
+    degree: "Higher Secondary Certificate",
+    field: "Science",
+    institution:
+      "Shri Fattechand Jain Vidyalaya & Junior College",
+    period: "2020 – 2022",
+    location: "Pune, Maharashtra",
+    status: "Completed",
+    score: "70.17%",
+    highlight: "Science Stream",
+    icon: BookOpen,
+  },
+];
+
 function Education() {
-  const education = [
-    {
-      degree: "B.Tech — Computer Science & Engineering",
-      specialization: "Data Science",
-      institution: "Shree Ramchandra College of Engineering",
-      location: "Pune, Maharashtra",
-      period: "2026 — Present",
-      status: "Currently Pursuing",
-      description:
-        "Building a strong foundation in computer science, data science, artificial intelligence, machine learning, databases, and software development.",
-    },
-  ];
-
-  const coursework = [
-    "Data Structures & Algorithms",
-    "Database Management Systems",
-    "Python Programming",
-    "Machine Learning",
-    "Artificial Intelligence",
-    "Data Science",
-    "Statistics",
-    "Computer Networks",
-  ];
-
   return (
     <section id="education" className="education-section">
-      <div className="container">
+      <div className="education-background">
+        <div className="education-grid"></div>
+        <div className="education-glow education-glow-one"></div>
+        <div className="education-glow education-glow-two"></div>
+      </div>
 
-        {/* =========================
-            SECTION HEADER
-        ========================== */}
-
+      <div className="container education-container">
+        {/* HEADER */}
         <div className="section-heading education-heading">
-
-          <div className="section-label">
-            <span></span>
-            EDUCATION
+          <div className="section-eyebrow">
+            <span className="eyebrow-line"></span>
+            <span>Academic Background</span>
           </div>
 
           <h2>
-            Building the foundation
-            <br />
-            <span>behind the skills.</span>
+            Education That
+            <span> Shapes My Foundation.</span>
           </h2>
 
           <p>
-            My academic journey is focused on computer science,
-            data science, artificial intelligence, and practical
-            technology development.
+            My academic journey in Computer Engineering,
+            supported by continuous learning in Artificial
+            Intelligence, Machine Learning, and Data Science.
           </p>
-
         </div>
 
-        {/* =========================
-            EDUCATION CARD
-        ========================== */}
+        {/* EDUCATION TIMELINE */}
+        <div className="education-timeline">
+          <div className="education-line"></div>
 
-        <div className="education-layout">
+          {education.map((item, index) => {
+            const Icon = item.icon;
 
-          <div className="education-card">
-
-            <div className="education-card-top">
-
-              <div className="education-icon">
-                <GraduationCap size={25} />
-              </div>
-
-              <span className="education-status">
-                Currently Pursuing
-              </span>
-
-            </div>
-
-            <div className="education-content">
-
-              <span className="education-label">
-                UNDERGRADUATE DEGREE
-              </span>
-
-              <h3>
-                {education[0].degree}
-              </h3>
-
-              <h4>
-                {education[0].specialization}
-              </h4>
-
-              <div className="education-meta">
-
-                <span>
-                  <BookOpen size={14} />
-                  {education[0].institution}
-                </span>
-
-                <span>
-                  <MapPin size={14} />
-                  {education[0].location}
-                </span>
-
-                <span>
-                  <CalendarDays size={14} />
-                  {education[0].period}
-                </span>
-
-              </div>
-
-              <p>
-                {education[0].description}
-              </p>
-
-            </div>
-
-          </div>
-
-          {/* =========================
-              COURSEWORK
-          ========================== */}
-
-          <div className="coursework-card">
-
-            <div className="coursework-header">
-
-              <span className="section-label">
-                <span></span>
-                CORE COURSEWORK
-              </span>
-
-              <p>
-                Areas supporting my technical development.
-              </p>
-
-            </div>
-
-            <div className="coursework-list">
-
-              {coursework.map((subject) => (
-                <div
-                  className="coursework-item"
-                  key={subject}
-                >
-                  <span className="coursework-dot"></span>
-
-                  <span>{subject}</span>
+            return (
+              <article
+                className="education-item"
+                key={`${item.degree}-${item.institution}`}
+              >
+                {/* TIMELINE NODE */}
+                <div className="education-node">
+                  <span>
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
-              ))}
 
-            </div>
+                {/* CARD */}
+                <div className="education-card">
+                  <div className="education-card-header">
+                    <div className="education-icon">
+                      <Icon size={25} strokeWidth={1.8} />
+                    </div>
 
-          </div>
+                    <div className="education-status">
+                      {item.status}
+                    </div>
+                  </div>
 
+                  <div className="education-main">
+                    <div className="education-title">
+                      <span className="education-label">
+                        {item.field}
+                      </span>
+
+                      <h3>{item.degree}</h3>
+
+                      <h4>{item.institution}</h4>
+                    </div>
+
+                    <div className="education-details">
+                      <span>
+                        <CalendarDays size={15} />
+                        {item.period}
+                      </span>
+
+                      <span>
+                        <MapPin size={15} />
+                        {item.location}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* SCORE CARDS */}
+                  <div className="education-achievements">
+                    <div className="education-achievement">
+                      <div className="achievement-icon">
+                        <Trophy size={17} />
+                      </div>
+
+                      <div>
+                        <span>Academic Performance</span>
+                        <strong>{item.score}</strong>
+                      </div>
+                    </div>
+
+                    <div className="education-achievement">
+                      <div className="achievement-icon">
+                        <Award size={17} />
+                      </div>
+
+                      <div>
+                        <span>Achievement</span>
+                        <strong>{item.highlight}</strong>
+                      </div>
+                    </div>
+
+                    {item.finalYear && (
+                      <div className="education-achievement">
+                        <div className="achievement-icon">
+                          <GraduationCap size={17} />
+                        </div>
+
+                        <div>
+                          <span>Final Year SGPA</span>
+                          <strong>{item.finalYear}</strong>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </article>
+            );
+          })}
         </div>
 
-        {/* =========================
-            ACADEMIC FOCUS
-        ========================== */}
-
-        <div className="academic-focus">
-
-          <div className="academic-focus-title">
-            <span className="academic-pulse"></span>
-
-            <span>
-              ACADEMIC FOCUS
-            </span>
+        {/* ACADEMIC FOCUS */}
+        <div className="education-focus">
+          <div className="focus-icon">
+            <GraduationCap size={25} />
           </div>
 
-          <div className="academic-focus-items">
+          <div className="focus-content">
+            <span>ACADEMIC FOCUS</span>
 
-            <span>Artificial Intelligence</span>
-            <span>Machine Learning</span>
-            <span>Data Science</span>
-            <span>Analytics</span>
-            <span>Software Development</span>
+            <h3>
+              Computer Engineering with a focus on
+              <strong> AI, ML & Data Science.</strong>
+            </h3>
 
+            <p>
+              Alongside my engineering curriculum, I have
+              continuously developed practical skills through
+              internships, certifications, and hands-on AI,
+              machine learning, and data analytics projects.
+            </p>
           </div>
-
         </div>
-
       </div>
     </section>
   );

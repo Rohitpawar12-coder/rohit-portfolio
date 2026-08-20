@@ -7,9 +7,12 @@ import {
 } from "lucide-react";
 
 function Hero() {
+  const GITHUB_URL = "https://github.com/Rohitpawar12-coder";
+  const LINKEDIN_URL =
+    "https://www.linkedin.com/in/rohit-pawar-a2282b351/";
+
   return (
     <section id="home" className="hero">
-
       {/* Background */}
       <div className="hero-grid"></div>
 
@@ -17,12 +20,8 @@ function Hero() {
       <div className="hero-glow hero-glow-two"></div>
 
       <div className="container hero-container">
-
-        {/* =========================
-            LEFT CONTENT
-        ========================== */}
+        {/* LEFT CONTENT */}
         <div className="hero-content">
-
           <div className="hero-status">
             <span className="status-dot"></span>
             Available for opportunities
@@ -54,7 +53,6 @@ function Hero() {
           </div>
 
           <div className="hero-actions">
-
             <a
               href="#projects"
               className="btn btn-primary"
@@ -70,42 +68,36 @@ function Hero() {
               Let's Connect
               <Mail size={18} />
             </a>
-
           </div>
 
+          {/* Social Links */}
           <div className="hero-socials">
-
             <a
-              href="https://github.com/Rohitpawar12-coder"
+              href={GITHUB_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="GitHub"
+              aria-label="Open GitHub profile"
             >
               <span className="social-text">GH</span>
             </a>
 
             <a
-              href="https://www.linkedin.com/"
+              href={LINKEDIN_URL}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
+              aria-label="Open LinkedIn profile"
             >
               <span className="social-text">in</span>
             </a>
-
           </div>
         </div>
 
-        {/* =========================
-            RIGHT VISUAL
-        ========================== */}
+        {/* RIGHT VISUAL */}
         <div className="hero-visual">
-
           <div className="profile-orbit orbit-one"></div>
           <div className="profile-orbit orbit-two"></div>
 
           <div className="profile-card">
-
             <div className="profile-card-top">
               <span></span>
               <span></span>
@@ -113,7 +105,6 @@ function Hero() {
             </div>
 
             <div className="code-window">
-
               <p>
                 <span className="code-purple">
                   const
@@ -199,11 +190,10 @@ function Hero() {
               </p>
 
               <span className="code-cursor"></span>
-
             </div>
           </div>
 
-          {/* Floating badges */}
+          {/* Floating Badges */}
           <div className="floating-badge badge-python">
             <span>🐍</span>
             Python
@@ -218,19 +208,18 @@ function Hero() {
             <span>📊</span>
             Data Science
           </div>
-
         </div>
       </div>
 
-      {/* Scroll */}
+      {/* Scroll Indicator */}
       <a
         href="#about"
         className="scroll-indicator"
+        aria-label="Scroll to About section"
       >
         <span>Scroll to explore</span>
         <ArrowDown size={18} />
       </a>
-
     </section>
   );
 }

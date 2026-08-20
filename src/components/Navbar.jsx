@@ -4,7 +4,10 @@ import { Menu, X } from "lucide-react";
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const [scrolled, setScrolled] = useState(false);
+
+  const GITHUB_URL = "https://github.com/Rohitpawar12-coder";
+  const LINKEDIN_URL =
+    "https://www.linkedin.com/in/rohit-pawar-a2282b351/";
 
   const navItems = [
     { id: "home", label: "Home" },
@@ -13,15 +16,18 @@ function Navbar() {
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "education", label: "Education" },
+    { id: "certifications", label: "Certifications" },
     { id: "contact", label: "Contact" },
   ];
 
-  const GITHUB_URL = "https://github.com/Rohitpawar12-coder";
-  const LINKEDIN_URL = "https://www.linkedin.com/in/rohit-pawar-a2282b351/";
-
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+      const scrolled = window.scrollY > 30;
+
+      document.documentElement.style.setProperty(
+        "--navbar-scrolled",
+        scrolled ? "1" : "0"
+      );
 
       let current = "home";
 
@@ -40,8 +46,7 @@ function Navbar() {
       setActiveSection(current);
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
+    window.addEventListener("scroll", handleScroll);
     handleScroll();
 
     return () => {
@@ -63,14 +68,19 @@ function Navbar() {
   };
 
   return (
-    <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
+    <header
+      className={`navbar ${
+        typeof window !== "undefined" && window.scrollY > 30
+          ? "navbar-scrolled"
+          : ""
+      }`}
+    >
       <div className="navbar-container">
         {/* Logo */}
         <button
-          type="button"
           className="navbar-logo"
           onClick={() => handleNavigation("home")}
-          aria-label="Go to homepage"
+          aria-label="Go to home"
         >
           <span className="logo-mark">R</span>
 
@@ -83,7 +93,6 @@ function Navbar() {
         <nav className="desktop-nav" aria-label="Main navigation">
           {navItems.map((item) => (
             <button
-              type="button"
               key={item.id}
               onClick={() => handleNavigation(item.id)}
               className={
@@ -104,7 +113,7 @@ function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="nav-social"
-            aria-label="Open Rohit's GitHub profile"
+            aria-label="Open GitHub profile"
           >
             <span className="social-text">GH</span>
           </a>
@@ -114,13 +123,12 @@ function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="nav-social"
-            aria-label="Open Rohit's LinkedIn profile"
+            aria-label="Open LinkedIn profile"
           >
             <span className="social-text">in</span>
           </a>
 
           <button
-            type="button"
             className="nav-contact-btn"
             onClick={() => handleNavigation("contact")}
           >
@@ -130,12 +138,10 @@ function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          type="button"
           className="mobile-menu-btn"
-          onClick={() => setIsOpen((previous) => !previous)}
-          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
-          aria-controls="mobile-navigation"
         >
           {isOpen ? <X size={23} /> : <Menu size={23} />}
         </button>
@@ -143,12 +149,12 @@ function Navbar() {
 
       {/* Mobile Navigation */}
       <div
-        id="mobile-navigation"
-        className={`mobile-nav ${isOpen ? "mobile-nav-open" : ""}`}
+        className={`mobile-nav ${
+          isOpen ? "mobile-nav-open" : ""
+        }`}
       >
         {navItems.map((item) => (
           <button
-            type="button"
             key={item.id}
             className={
               activeSection === item.id
@@ -166,7 +172,7 @@ function Navbar() {
             href={GITHUB_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Open Rohit's GitHub profile"
+            aria-label="Open GitHub profile"
           >
             <span className="social-text">GH</span>
             GitHub
@@ -176,7 +182,7 @@ function Navbar() {
             href={LINKEDIN_URL}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Open Rohit's LinkedIn profile"
+            aria-label="Open LinkedIn profile"
           >
             <span className="social-text">in</span>
             LinkedIn
